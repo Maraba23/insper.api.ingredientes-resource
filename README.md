@@ -1,1 +1,1 @@
-# insper.api.ingredientes-resource
+# platform.241.store.account-resource
