@@ -1,23 +1,23 @@
 spring:
   application:
-    name: store-account
+    name: insper.api-ingrediente
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/store}
-    username: ${DATABASE_USERNAME:store}
-    password: ${DATABASE_PASSWORD:store123321}
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/ingredientes}
+    username: ${DATABASE_USERNAME:ingredientes}
+    password: ${DATABASE_PASSWORD:ingredientes123321}
     driver-class-name: org.postgresql.Driver
   flyway:
     baseline-on-migrate: true
-    schemas: account
+    schemas: ingrediente
   jpa:
     properties:
       hibernate:
-        default_schema: account
+        default_schema: ingrediente
 
 management:
   endpoints:
     web:
-      base-path: /accounts/actuator
+      base-path: /ingredientes/actuator
       exposure:
         include: [ 'prometheus' ]
 

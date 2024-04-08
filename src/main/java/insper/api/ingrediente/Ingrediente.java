@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
 public class Ingrediente {
 
     private String id;
-    private String nome;
+    private String name;
     private String descricao;
     
 }

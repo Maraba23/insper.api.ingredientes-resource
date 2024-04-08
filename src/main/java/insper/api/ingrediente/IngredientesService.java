@@ -16,7 +16,7 @@ public class IngredientesService {
     @Autowired
     private IngredientesRepository ingredientesRepository;
 
-    public Ingredientes create(Ingrediente in) {
+    public Ingrediente create(Ingrediente in) {
         return ingredientesRepository.save(new IngredientesModel(in)).to();
     }
 

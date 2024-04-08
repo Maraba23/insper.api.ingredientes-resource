@@ -44,6 +44,7 @@ public class IngredientesModel {
             .id(id)
             .name(name)
             .descricao(descricao)
+            .build();
     }
     
 }
