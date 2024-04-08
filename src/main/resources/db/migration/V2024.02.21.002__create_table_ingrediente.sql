@@ -1,4 +1,4 @@
-CREATE TABLE account
+CREATE TABLE ingrediente
 (
     id_ingrediente character varying(36) NOT NULL,
     tx_name character varying(256) NOT NULL,
