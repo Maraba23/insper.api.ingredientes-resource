@@ -35,23 +35,22 @@ public class IngredienteResource implements IngredienteController {
     }
 
     @Override
-    public ResponseEntity<IngredienteOut> read(String idIngrediente, String nomeIngrediente, String descricaoIngrediente) {
-        final IngredienteOut ingrediente = IngredienteOut.builder()
-            .id(idIngrediente)
-            .name(nomeIngrediente)
-            .descricao(descricaoIngrediente)
-            .build();
-        return ResponseEntity.ok(ingrediente);
+    public ResponseEntity<IngredienteOut> read(String id) {
+        Ingrediente ingrediente = ingredienteService.read(id);
+        if (ingrediente == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(IngredientesParser.to(ingrediente));
+    }
+
+    @Override
+    public ResponseEntity<IngredienteOut> readAll() {
+        return ResponseEntity.ok(IngredienteOut.builder().build());
     }
 
     @Override
     public ResponseEntity<IngredienteOut> update(String id, IngredienteIn in) {
-        // parser
-        Ingrediente ingrediente = IngredientesParser.to(in);
-        // insert using service
-        ingrediente = ingredienteService.create(ingrediente);
-        // return
-        return ResponseEntity.ok(IngredientesParser.to(ingrediente));
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
-    
+
 }
