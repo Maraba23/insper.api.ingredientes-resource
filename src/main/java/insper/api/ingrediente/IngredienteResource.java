@@ -53,4 +53,13 @@ public class IngredienteResource implements IngredienteController {
         return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 
+    @Override
+    public ResponseEntity<IngredienteOut> delete(String id) {
+        Ingrediente ingrediente = ingredienteService.delete(id);
+        if (ingrediente == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(IngredientesParser.to(ingrediente));
+    }
+
 }

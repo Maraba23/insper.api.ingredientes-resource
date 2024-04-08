@@ -23,5 +23,19 @@ public class IngredientesService {
     public Ingrediente read(@NonNull String id) {
         return ingredientesRepository.findById(id).map(IngredientesModel::to).orElse(null);
     }
+
+    public IngredienteOut readAll() {
+        return IngredienteOut.builder().build();
+    }
+
+    public Ingrediente update(@NonNull String id, Ingrediente in) {
+        return ingredientesRepository.save(new IngredientesModel(in)).to();
+    }
+
+    public Ingrediente delete(@NonNull String id) {
+        Ingrediente ingrediente = read(id);
+        ingredientesRepository.deleteById(id);
+        return ingrediente;
+    }
     
 }
