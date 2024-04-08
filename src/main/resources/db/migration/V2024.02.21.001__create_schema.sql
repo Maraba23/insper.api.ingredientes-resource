@@ -1,1 +1,1 @@
-CREATE SCHEMA IF NOT EXISTS ingredientes;
+CREATE SCHEMA IF NOT EXISTS ingrediente;
