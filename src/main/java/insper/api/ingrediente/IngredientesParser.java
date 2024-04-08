@@ -14,7 +14,6 @@ public class IngredientesParser {
 
     public static IngredienteOut to(Ingrediente ingrediente) {
         return IngredienteOut.builder()
-            .id(ingrediente.id())
             .name(ingrediente.name())
             .descricao(ingrediente.descricao())
             .build();
