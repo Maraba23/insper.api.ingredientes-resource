@@ -1,16 +1,10 @@
 package insper.api.ingrediente;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import insper.api.ingrediente.IngredienteIn;
-import insper.api.ingrediente.IngredienteOut;
 
 @RestController
 public class IngredienteResource implements IngredienteController {

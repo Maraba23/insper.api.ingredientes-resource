@@ -1,8 +1,5 @@
 package insper.api.ingrediente;
 
-import insper.api.ingrediente.IngredienteIn;
-import insper.api.ingrediente.IngredienteOut;
-
 public class IngredientesParser {
 
     public static Ingrediente to(IngredienteIn in) {
