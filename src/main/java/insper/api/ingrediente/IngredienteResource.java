@@ -1,5 +1,7 @@
 package insper.api.ingrediente;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,13 +40,14 @@ public class IngredienteResource implements IngredienteController {
     }
 
     @Override
-    public ResponseEntity<IngredienteOut> readAll() {
-        return ResponseEntity.ok(IngredienteOut.builder().build());
+    public ResponseEntity<List<IngredienteOut>> readAll() {
+        final List<IngredienteOut> ingredientes = ingredienteService.readAll();
+        return ResponseEntity.ok(ingredientes);
     }
 
     @Override
     public ResponseEntity<IngredienteOut> update(String id, IngredienteIn in) {
-        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
+        return ResponseEntity.ok().body(IngredientesParser.to(ingredienteService.update(id, IngredientesParser.to(in))));
     }
 
     @Override
