@@ -15,5 +15,12 @@ public class IngredientesParser {
             .descricao(ingrediente.descricao())
             .build();
     }
+
+    public static IngredienteOut to(IngredienteOut in) {
+        return IngredienteOut.builder()
+            .name(in.name())
+            .descricao(in.descricao())
+            .build();
+    }
     
 }

@@ -1,5 +1,8 @@
 package insper.api.ingrediente;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +22,11 @@ public class IngredientesService {
         return ingredientesRepository.findById(id).map(IngredientesModel::to).orElse(null);
     }
 
-    public IngredienteOut readAll() {
-        return IngredienteOut.builder().build();
+    public List<IngredienteOut> readAll() {
+        List<IngredienteOut> ingredientes = new ArrayList<>();
+        ingredientesRepository.findAll().forEach(
+            ingrediente->ingredientes.add(IngredientesParser.to(ingrediente.to())));
+        return ingredientes;
     }
 
     public Ingrediente update(@NonNull String id, Ingrediente in) {
