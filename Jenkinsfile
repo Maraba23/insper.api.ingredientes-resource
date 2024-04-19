@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Ingrediente') {
             steps {
-                build job: 'api.ingredientes', wait: true
+                build job: 'api.ingrediente', wait: true
             }
         }
         stage('Build') { 
@@ -14,7 +14,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script {
-                    account = docker.build("humbertosandmann/ingrediente:${env.BUILD_ID}", "-f Dockerfile .")
+                    ingrediente = docker.build("pasilva2023/ingrediente:${env.BUILD_ID}", "-f Dockerfile .")
                 }
             }
         }
@@ -22,8 +22,8 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-credential') {
-                        account.push("${env.BUILD_ID}")
-                        account.push("latest")
+                        ingrediente.push("${env.BUILD_ID}")
+                        ingrediente.push("latest")
                     }
                 }
             }
