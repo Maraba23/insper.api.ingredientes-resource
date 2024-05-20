@@ -53,12 +53,21 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- exporta o cache -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-cache</artifactId>
+		</dependency>	
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
 		<!-- permite o registro em um servico de discovery -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-
 		<!-- habilitar para fazer uso de outros microsservicos -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -68,8 +77,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
+		</dependency>	
 		<!-- exporta no formato prometheus -->
 		<dependency>
 			<groupId>io.micrometer</groupId>
