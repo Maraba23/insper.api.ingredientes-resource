@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-ingredientes
+  name: ingredientes
 spec:
   selector:
     matchLabels:
-      app: api-ingredientes
+      app: ingredientes
   replicas: 1
   template:
     metadata:
       labels:
-        app: api-ingredientes
+        app: ingredientes
     spec:
       containers:
-        - name: api-ingredientes
-          image: humbertosandmann/account:latest
+        - name: ingredientes
+          image: pasilva2023/ingredientes:latest
           ports:
             - containerPort: 8080
           env:
@@ -37,11 +37,11 @@ spec:
                   name: postgres-configmap
                   key: POSTGRES_DB
 
-            - name: POSTGRES_USERNAME
+            - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
                   name: postgres-credentials
-                  key: POSTGRES_USERNAME
+                  key: POSTGRES_USER
 
             - name: POSTGRES_PASSWORD
               valueFrom:
