@@ -59,4 +59,4 @@ spec:
           volumes:
             - name: config-volume
               configMap:
-                name: products-circuit-breaker-config
+                name: ingredientes-circuit-breaker-config
